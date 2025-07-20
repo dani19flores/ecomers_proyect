@@ -1,0 +1,236 @@
+@charset "UTF-8";
+.products .products__item .products__btn {
+  display: block;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+body {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 300;
+  color: #1d1d1d;
+  font-family: "lexend", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  padding: 20px 50px;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.header i {
+  width: 35px;
+  cursor: pointer;
+  display: inline-block;
+}
+.header i .header__icon,
+.header i .header__logo {
+  width: 100%;
+}
+
+.banner {
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  background-position-y: 10%;
+}
+.banner .banner__title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 10px;
+}
+.banner .banner__description {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+.products {
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*ninguna columna se reducira menos de 250px*/
+}
+.products .products__item {
+  cursor: pointer;
+  text-align: center;
+  /* 
+  - min: el valor mínimo permitido (nunca será menor que esto).
+  - ideal: el valor preferido (por ejemplo, basado en unidades relativas como vw).
+  - max: el valor máximo permitido (nunca será mayor que esto).
+  font-size: clamp(1.5rem, 5vw, 3rem);: clamp(min, ideal, max) 
+  */
+}
+.products .products__item .products__img {
+  width: 200px;
+  margin-bottom: 15px;
+}
+.products .products__item .products__title {
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.products .products__item .products__price {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.cart {
+  position: fixed;
+  left: -500px;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: #f7f7f7;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.cart .open {
+  left: 0;
+}
+.cart .cart__close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  float: right;
+  cursor: pointer;
+}
+.cart .cart__title {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 25px 0;
+  box-sizing: border-box;
+}
+.cart .cart__item {
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.cart .cart__item .cart__item p:nth-child(3) {
+  font-weight: 500;
+}
+.cart .cart__item .cart__item i {
+  width: 20px;
+}
+.cart .cart__item .cart__img {
+  width: 60px;
+}
+.cart .cart__item .cart__delete-icon {
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  .header {
+    padding: 15px;
+  }
+  .header i {
+    width: 30px;
+  }
+  .header > img {
+    width: 60px;
+  }
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(200px 1fr));
+  }
+  .products .products__img {
+    width: 150px;
+  }
+  .cart {
+    width: 400px;
+    top: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .banner {
+    padding: 30px 0;
+  }
+  .banner .banner__title {
+    font-size: 18px;
+  }
+  .banner .banner_description {
+    font-size: 16px;
+  }
+  .products {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  .products__img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  .productos__title,
+  .products__price {
+    padding: 0 10px;
+  }
+  .cart {
+    width: 100%;
+    box-shadow: none;
+  }
+  .cart__title {
+    padding: 15px 0;
+  }
+  .cart__item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart__img {
+    width: 100px;
+  }
+  .cart__description {
+    margin: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
