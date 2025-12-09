@@ -35,17 +35,35 @@ Ensure you have Node.js installed on your machine.
     cd Proyecto-ecomers
     ```
 
-2.  Install dependencies:
+2.  Install the required dependencies:
     ```bash
     npm install
     ```
 
-3.  Start the development server:
+### Running the Project
+
+To start the development server and view the application in your browser:
+
+1.  Run the development script:
     ```bash
     npm run dev
     ```
 
-4.  Open your browser and navigate to the local URL (usually `http://localhost:5173`).
+2.  Open your browser and navigate to the local URL shown in the terminal (usually `http://localhost:5173`).
+
+### Building for Production
+
+To build the application for production deployment:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ## Project Structure
 
